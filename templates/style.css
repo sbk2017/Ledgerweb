@@ -1,0 +1,20 @@
+h2, h3 {margin: 0; border: 1px solid gray;}
+h2 {border-width: 0 0 0 1px; padding: 0 0 0 0.25em}
+h3 {border-width: 1px 1px 0 0; padding: 0.1em 0.33em;}
+table {width: 100%;}
+th, td {text-align: right; padding: 0 0.5em;
+  border-bottom: 1px solid #DDD;}
+td {font: small Verdana, "Andale Mono", Courier, "Courier New", 
+  monospace;}
+thead th {vertical-align: bottom; border: 1px solid gray;
+  border-width: 0 1px 1px 0;
+  white-space: normal;}
+th {border-right: 1px solid gray; border-bottom-style: dotted;
+  white-space: nowrap;}
+td {letter-spacing: -1px;}
+td.profit {background: #CEC; border-bottom-color: white;
+  border-right: 1px solid gray;}
+td.neg {background: #FF3; color: red;}
+tr.totals td {font-weight: bold; border-bottom: 1px solid gray;}
+tr.totals td.profit {border: 1px solid black;}
+tr.totals th {border-bottom-style: solid;}

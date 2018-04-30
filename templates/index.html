@@ -1,0 +1,102 @@
+$def with (balsheet,income,expenses,profit,currentdues,nextdues)
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+<ul>
+    <li class="active"><a href="/" >Home</a></li>
+    <li><a href="/trax/">Transaction Detail</a></li>
+    <li><a href="/mexp/">Monthly Blance</a></li>
+    <li><a href="/balance/">Account Blance</a></li>
+</ul>
+<div class="container">
+    <div class = "floatLeft" >
+        <div>
+            <table class="zui-table zui-table-horizontal zui-table-highlight" >
+                <thead>
+                    <tr><th colspan = '2'>Balance Sheet Summery</th></tr>
+                    <tr><th>Account</th><th>Blance </th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        $for acc,amt in balsheet['Assets'].items():
+                            <td>$acc</td><td class="number">$amt</td>
+                        
+                    </tr>
+                    <tr>
+                        $for acc,amt in balsheet['Liabilities'].items():
+                            <td>$acc</td><td class="number">$amt</td>
+                    </tr>
+                    <tr>
+                        $for acc,amt in balsheet['Equity'].items():
+                            <td>$acc</td><td class="number">$amt</td>
+                    </tr>
+                $if float(balsheet['Total'].replace(',','')) < 0:
+                    <tr style="font-weight:bold "><td style ="color:Red">Total</td><td class="number" style ="color:Red">$balsheet['Total']</td></tr>
+                $else:
+                    <tr style="font-weight:bold color:Black"><td>Total</td><td class="number">$balsheet['Total']</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <table class="zui-table zui-table-horizontal zui-table-highlight" >
+                <thead>
+                    <tr><th colspan = '2'>Income Summery</th></tr>
+                    <tr><th>Account</th><th>Amount</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><a href="/mexp/?saccount=Assets">Income</a></td><td class="number">$income['Income']</td></tr>
+                    <tr><td>Expenses</td><td class="number">$expenses['Expenses']</td></tr>
+                    $if float(profit['netprofit'].replace(',','')) > 0:
+                        <tr style="font-weight:bold "><td style ="color:Red">NetLoss</td><td  class="number" style ="color:Red">$profit['netprofit']</td></tr>
+                    $else:
+                        <tr style="font-weight:bold"><td>NetProfit</td><td class="number">$profit['netprofit']</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div >
+        <div class="container">
+            <table class="zui-table zui-table-horizontal zui-table-highlight">
+                <thead>
+                    <tr><th>Month</th><th>Date</th><th>Group Account</th><th>Account</th><th>Due Amount</th></tr>
+                </thead>
+                <tbody>
+                $if currentdues != None :
+                    $for row in currentdus:
+                        <tr>
+                        $for data in row:
+                            <td>
+                            $data
+                            </td>
+                        </tr>
+                $else :
+                    <tr>
+                    <td>No Dues for the current month</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <table class="zui-table zui-table-horizontal zui-table-highlight">
+                <thead><tr><th>Month</th><th>Date</th><th>Group Account</th><th>Account</th><th>Due Amount</th></tr></thead>
+                <tbody>
+                $if nextdues != None :
+                    $for row in nextdues:
+                        <tr>
+                        $for data in row:
+                            <td>
+                            $data
+                            </td>
+                $else :
+                    <tr>
+                    <td>No Dues for the current month</td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

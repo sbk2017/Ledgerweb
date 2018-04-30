@@ -1,0 +1,64 @@
+$def with (mexpenses,expacc,months)
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/static/style.css">
+<style>
+td:nth-of-type(2), 
+td:nth-of-type(3),
+td:nth-of-type(4),
+td:nth-of-type(5),
+td:nth-of-type(6),
+td:nth-of-type(7), 
+td:nth-of-type(8),
+td:nth-of-type(9),
+td:nth-of-type(10),
+td:nth-of-type(11),
+td:nth-of-type(12),
+td:nth-of-type(13),
+td:nth-of-type(14) {
+  text-align: right;
+  font-family: monospace;
+}
+
+</style>
+</head>
+<body>
+<ul>
+    <li class="active"><a href="/" >Home</a></li>
+    <li><a href="/trax/">Transaction Detail</a></li>
+    <li><a href="/mexp/">Monthly Blance</a></li>
+    <li><a href="/balance/">Account Blance</a></li>
+</ul>
+<div>
+<div><p>Monthly account balance</p></div>
+
+<form>
+  <input type="text" name="saccount" placeholder="Search..">
+</form>
+</div>
+<div>
+<table class="zui-table zui-table-horizontal zui-table-highlight">
+<thead>
+<tr>
+    <th>Account</th>    
+$for mon in months:
+    <th>$mon</th>
+<th>total</th>
+</tr>
+</thead>
+<tbody>
+$for account in expacc:
+    <tr>
+    <td style="font-weight:bold"><a href="/trax/?saccount=$account">$account</a></td>
+    $for mon in months:
+        $if account in mexpenses[mon].keys():
+            <td class="number">$mexpenses[mon][account]</td>
+        $else:
+            <td class="number">0.00</td>
+    <td class="number">$mexpenses['Total'][account]</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>

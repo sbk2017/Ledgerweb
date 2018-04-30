@@ -1,0 +1,54 @@
+$def with (account)
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/static/style.css">
+<style>
+td:nth-of-type(6),
+td:nth-of-type(7),
+td:nth-of-type(8){
+  text-align: right;
+  font-family: monospace;}
+</style>
+</head>
+<body>
+<ul>
+    <li class="active"><a href="/" >Home</a></li>
+    <li><a href="/trax/">Transaction Detail</a></li>
+    <li><a href="/mexp/">Monthly Blance</a></li>
+    <li><a href="/balance/">Account Blance</a></li>
+</ul>
+<div>
+<p>Search account transactions:</p>
+
+<form>
+  <input type="text" name="saccount" placeholder="Search..">
+</form>
+</div>
+<div>
+<table class="zui-table zui-table-horizontal zui-table-highlight">
+<thead>
+<tr>
+<th>Detail</th>
+<th>Month</th>
+<th>Date</th>
+<th>Group Account</th>
+<th>Note</th>
+<th>Debit</th>
+<th>Credit</th>
+<th>Balance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+$for row in account:
+    <tr><td><a href="/trax/?saccount=$row[2]">view</a></td>
+        $for data in row:
+            <td>
+            $data
+            </td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>

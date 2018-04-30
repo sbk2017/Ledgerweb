@@ -1,0 +1,59 @@
+$def with (currentdues, nextdues)
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/static/style.css">
+<style>
+td:nth-of-type(5) { text-align: right;}
+</style>
+</head>
+<body>
+<div>
+<table class="zui-table zui-table-horizontal zui-table-highlight">
+<thead>
+<tr>
+<th>Month</th>
+<th>Date</th>
+<th>Group Account</th>
+<th>Account</th>
+<th>Due Amount</th>
+</tr>
+</thead>
+<tbody>
+$if currentdues != None :
+    $for row in currentdus:
+        <tr>
+            $for data in row:
+                <td>
+                $data
+                </td>
+$else :
+    <td>No Dues for the current month</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table class="zui-table zui-table-horizontal zui-table-highlight">
+<thead>
+<tr>
+<th>Month</th>
+<th>Date</th>
+<th>Group Account</th>
+<th>Account</th>
+<th>Due Amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+$for row in nextdues:
+    <tr>
+        $for data in row:
+            <td>
+            $data
+            </td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>
