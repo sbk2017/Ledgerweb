@@ -1,0 +1,158 @@
+.dashpage {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+    -webkit-column-width: 100px; /* Chrome, Safari, Opera */
+    -moz-column-width: 100px; /* Firefox */
+    column-width: 100px;
+}
+
+.zui-table {
+    margin: auto;
+    border: solid 1px #DDEEEE;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: normal 14px Arial, sans-serif;
+}
+.zui-table thead th {
+    background-color: #DDEFEF;
+    border: solid 1px #DDEEEE;
+    color: #336B6B;
+    padding: 10px;
+    text-align: left;
+    #text-shadow: 1px 1px 1px #fff;
+}
+.zui-table tbody td {
+    border: solid 1px #DDEEEE;
+    color: #333;
+    padding: 10px;
+    #text-shadow: 1px 1px 1px #fff;
+}
+.summery-table tbody td {
+    border: solid 1px #DDEEEE;
+    color: #333;
+    padding: 5px;
+    #text-shadow: 1px 1px 1px #fff;
+}
+.zui-table-highlight tbody tr:hover {
+    background-color: #CCE7E7;
+}
+.zui-table-horizontal tbody td {
+    border-left: none;
+    border-right: none;
+}
+
+div {
+    text-align : left;
+    padding: 10px;
+    border-width: 0 1px 1px 0;
+    border-style: solid;
+    border-color: #fff;
+    #box-shadow: 0 1px 1px #ccc;
+    margin-bottom: 5px;
+    
+}
+input[type=text] {
+    color: black;
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 100%;
+}
+/* Style the header */
+.header {
+    background-color: #f1f1f1;
+    padding: 30px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    padding: 10px;
+    }
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Style the footer */
+.footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #8AD3D3;
+}
+
+.active {
+    background-color: #8AD3D3;
+}
+div.wrap {
+  width: 10%;
+  display: inline-block;
+  margin: 10px;
+}
+.floatLeft { width:20%; float: left; }
+.floatRight {width: 80%; float: right; }
+.container {  overflow: hidden; }
+
+/* unvisited link */
+a:link, a:visited {
+    color: #182029;
+    text-decoration: none;
+    font-size: 14px;
+    #font-weight: bold;
+}
+
+/* mouse over link */
+a:hover {
+    color: #191F68;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+.number {
+    font: normal 14px Monaco, monospace;
+    text-align: right;
+    }
